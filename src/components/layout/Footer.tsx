@@ -63,20 +63,20 @@ export default function Footer(props: FooterProps) {
   };
 
   return (
-    <footer className="bg-muted/30 border-t border-border">
+    <footer className="bg-gray-900 dark:bg-gray-950 border-t border-gray-800 dark:border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <button
               onClick={() => handleLinkClick(config.brandHref)}
-              className="text-xl font-bold text-foreground hover:text-primary transition-colors mb-4 block"
+              className="text-xl font-bold text-white hover:text-blue-400 transition-colors mb-4 block"
               data-editable-href="brandHref"
               data-href={config.brandHref}
             >
               <span data-editable="brand">{config.brand}</span>
             </button>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
               <span data-editable="description">{config.description}</span>
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function Footer(props: FooterProps) {
           {/* Links Sections */}
           {config.links.map((section, sectionIdx) => (
             <div key={sectionIdx} className="">
-              <h3 className="font-semibold text-foreground mb-4">
+              <h3 className="font-semibold text-white mb-4">
                 <span data-editable={`links[${sectionIdx}].title`}>{section.title}</span>
               </h3>
               <ul className="space-y-3">
@@ -92,7 +92,7 @@ export default function Footer(props: FooterProps) {
                   <li key={itemIdx}>
                     <button
                       onClick={() => handleLinkClick(item.href)}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                      className="text-gray-300 hover:text-white transition-colors text-sm"
                       data-editable-href={`links[${sectionIdx}].items[${itemIdx}].href`}
                       data-href={item.href}
                     >
@@ -108,8 +108,8 @@ export default function Footer(props: FooterProps) {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">
             <span data-editable="copyright">{config.copyright}</span>
           </p>
           
@@ -119,7 +119,7 @@ export default function Footer(props: FooterProps) {
               <button
                 key={idx}
                 onClick={() => handleLinkClick(social.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
                 data-editable-href={`socialLinks[${idx}].href`}
                 data-href={social.href}
               >
